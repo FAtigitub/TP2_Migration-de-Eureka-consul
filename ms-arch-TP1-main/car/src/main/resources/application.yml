@@ -1,0 +1,23 @@
+server:
+  port: 8082  # Port for SERVICE-CAR service
+
+spring:
+  application:
+    name: SERVICE-CAR  # Name registered in Consul
+  cloud:
+    consul:
+      host: localhost  # Consul server host
+      port: 8500       # Consul server port
+      discovery:
+        enabled: true  # Enable Consul service discovery
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/carservicedb?createDatabaseIfNotExist=true
+    username: "root"
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect

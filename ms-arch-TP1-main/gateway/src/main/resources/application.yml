@@ -1,0 +1,14 @@
+server:
+  port: 8888  # Set the server port for the gateway service
+
+spring:
+  application:
+    name: Gateway  # The name of the service registered in Consul
+  cloud:
+    consul:
+      host: localhost  # Consul server host
+      port: 8300       # Consul server port (default is 8500)
+      discovery:
+        enabled: true  # Enable service discovery through Consul
+
+  # Additional gateway configuration can go here
